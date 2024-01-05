@@ -1,0 +1,79 @@
+show dbs ==> show all dbs
+
+show collections ==> show all collections
+
+db.dropDatabase() ==> delete db
+
+exit ==> exit
+
+db.users.insertOne({name : " RK"}) ==> Insert one Object
+
+db.users.insertOne({name : "Vijay", age : 29, address : {street : "vembuli street", pincode : 651009 }, hobbies : ["python", "Python Developer"]}) ==> insert diffrent concept in one Object
+
+db.users.find() ==> find to show all object list
+
+db.users.insertMany([{name : "Ranjith"}, {name : "Kumar"}, {name : "Sai"}]) ==> insert multiple object
+
+db.users.insertMany([{name : "Dhanush", age : 35, hobbies : ["Singing Song"], address : { street : "North Street", city : "Chennai"}}, {name : "Siva", age : 30, hobbies : ["Acting"], address : { street : "South Street", city : 
+"Chennai"}}]) ==> same as above code
+
+db.users.find().sort({name : 1}).limit(3) ==> find and sort [A-Z] and get limit 3
+
+db.users.find().sort({name : -1}).limit(3) ==> find and sort [Z-A] and get limit 
+
+db.users.find().sort({age : 1, name : -1}).limit(3) ==> age [0-9], name [A-Z] and get limit 3
+
+db.users.find().skip(1).limit(2) ==> find and get limit 2 objects but skiped, orderwise index 1 value so output is get 2nd and 3rd value
+
+db.users.find({name : "Siva"}) ==> find to get siva name object all details
+
+db.users.find({name : "Siva"}, {name : 1, age : 1}) ==> find name object details but show name and age value only
+
+db.users.find({}, { name : 0 }) ==> find and get all details without name
+
+db.users.find({name : "Siva"},{age : 0}) ==> find get all object details without age 
+
+db.users.find({name : "Siva"}, {name : 1, age : 1, _id : 0}) ==> find and get name, age values without id details
+
+db.demo.find({age : {$gte : 20, $lte : 40}}) ==> find and get greter than 20 to lessthan 40 age details
+
+db.demo.find({age : {$gte : 20, $lte : 40}, name : "Ajith"}) ==> find and get greter than 20 to lessthan 40 age details for Ajith
+
+db.demo.find({$and : [{age :23}, {name : "Ajith"}]}) ==> find and get that age and name details
+
+db.demo.find({$or : [{age : 23}, {name : "Ajith"}]}) ==> find and get age or name details
+
+db.demo.find({age : {$not: {$lte : 20}}}) ==> find and get without lessthan age 20 value
+
+db.demo.find({$expr: {$gt:["$debt", "$balance"]}}) ==> find and get debt and balance compared value
+
+db.demo.find({"address.city": "Chennai"}) ==> find and get address.city value
+
+db.demo.findOne({$expr: {$gt: ["$dept", "$balance"]}}) ==> find and get one value for debt and balance
+
+db.demo.countDocuments({$expr: {$gt: ["$name", "$age"]}}) ==> get name,age count 
+
+db.demo.updateOne({age:31}, {$set: {age:20} }) ==> get particuler age updated details
+
+db.demo.updateOne({_id:ObjectId('656860a446672da25d989628')}, {$set: {name:"Sai"}}) ==> give object id and get updated details
+
+db.demo.updateOne({_id:ObjectId('656860a446672da25d989628')}, {$inc : {age:5} }) ==> increment age 5 in particular object
+
+db.demo.updateOne({_id:ObjectId('656860a446672da25d989628')},{$rename: {balance: "avaialable"} }) ==> rename for balance in particuler object
+
+db.demo.updateOne({_id:ObjectId('656860a446672da25d989628')}, {$push: { hobbies: "Watching Movies"}}) ==> push one sentence in particular object
+
+db.demo.updateOne({_id: ObjectId('656860a446672da25d989628')}, {$pull: {hobbies: "Singing song"}}) ==> Remove hobbies content in particuler object
+
+db.demo.updateOne({_id:ObjectId('656860a446672da25d989628')}, {$unset: {age: ""}}) ==> delete age in particular object
+
+db.demo.updateMany({address: {$exists: true}}, {$unset: {address: ""}}) ==> delete address in all object
+
+db.demo.replaceOne({age:28}, {name: "RK"}) ==> go to age 20 document and delete all details and then give name in RK for that particuler id
+
+db.demo.deleteOne({debt:10}) ==> delete debt:10 document permanantly
+
+db.demo.deleteMany({age: {$exists: false}}) ==> In the document, delete permanently if there is no age
+
+
+

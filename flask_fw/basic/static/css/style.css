@@ -1,0 +1,13 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.flask {
+  background-color: rgba(48, 57, 82, 1);
+  color: white;
+  padding: 30px 30px;
+  font-size: 20px;
+  text-align: center;
+}
