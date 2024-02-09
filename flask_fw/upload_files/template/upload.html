@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Files</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/assert/css/bootstrap.min.css') }}"
+    />
+    <script src="{{ url_for('static', filename='css/assert/js/jquery.min.js') }}"></script>
+  </head>
+  <body>
+    <div class="col-md-offset-3 col-md-5" style="margin-top: 80px">
+      <form action="/" method="post" enctype="multipart/form-data">
+        <h3 class="page-header text-primary">Upload Files</h3>
+        {% with messages = get_flashed_messages(with_categories=true)%} {% if
+        messages %} {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %} {% endif %} {% endwith %}
+        <div class="form-group">
+          <label>Browse PDF files</label>
+          <input type="file" class="form-control" name="upload_pdf" />
+        </div>
+        <div class="form-group">
+          <label>Browse Excel files</label>
+          <input type="file" class="form-control" name="upload_excel" />
+        </div>
+        <div class="form-group">
+          <label>Browse Video files</label>
+          <input type="file" class="form-control" name="upload_videos" />
+        </div>
+        <div class="form-group">
+          <input
+            type="submit"
+            value="Upload Files"
+            class="btn btn-success btn-block"
+          />
+        </div>
+      </form>
+    </div>
+    <script src="{{ url_for('static', filename='css/assert/js/bootstrap.min.js') }}"></script>
+    <script>
+      $(document).ready(function () {
+        $(".alert").hide(4000);
+      });
+    </script>
+  </body>
+</html>

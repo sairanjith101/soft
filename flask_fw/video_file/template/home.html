@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Upload and Download</title>
+  </head>
+  <body>
+    <h1>Video Upload</h1>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="video">Choose a video to upload:</label>
+      <input type="file" name="video" id="video" accept="video/*" required />
+      <br />
+      <input type="submit" value="Upload" />
+    </form>
+
+    <h1>Video List</h1>
+
+    <ul>
+      {% for filename in video_filenames %}
+      <li>
+        <a href="/download/{{ filename }}">{{ filename }}</a>
+        <video width="320" height="240" controls>
+          <source src="/download/{{ filename }}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

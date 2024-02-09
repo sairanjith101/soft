@@ -1,0 +1,39 @@
+<!-- templates/details.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operation Details</title>
+    <style>
+      table {
+        width: 50%;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Operation Details</h1>
+
+    <table>
+      {% for key, value in operation_data.items() %}
+      <tr>
+        <th>{{ key|capitalize }}</th>
+        <td>
+          {% if key == '_id' %} {{ value|string }} {% else %} {{ value }} {%
+          endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <a href="{{ url_for('index') }}">Back to Database</a>
+  </body>
+</html>

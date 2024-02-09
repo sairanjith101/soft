@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Alert Example</title>
+  </head>
+  <body>
+    <video id="myVideo" width="640" height="360" controls>
+      <source src="/video/video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <script>
+      var video = document.getElementById("myVideo");
+
+      // Listen for the 'ended' event on the video element
+      video.addEventListener("ended", function () {
+        // When the video ends, show an alert message
+        showAlert("Video Ended!");
+      });
+
+      function showAlert(message) {
+        alert(message);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result Page</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+      }
+      .column {
+        box-sizing: border-box;
+        padding: 0 20px;
+        margin-bottom: 20px;
+      }
+      .column table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      .column table,
+      th,
+      td {
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="column">
+      <h1>Index Page Data</h1>
+      <table>
+        <tr>
+          <th>Operation Name</th>
+          <td>{{ index_data.operation_name }}</td>
+        </tr>
+        <tr>
+          <th>Operation ID</th>
+          <td>{{ index_data.operation_id }}</td>
+        </tr>
+        <tr>
+          <th>Operation Grade</th>
+          <td>{{ index_data.operation_grade }}</td>
+        </tr>
+        <tr>
+          <th>Neck</th>
+          <td>{{ index_data.neck }}</td>
+        </tr>
+        <tr>
+          <th>Leg</th>
+          <td>{{ index_data.leg }}</td>
+        </tr>
+        <tr>
+          <th>Arm</th>
+          <td>{{ index_data.arm }}</td>
+        </tr>
+        <tr>
+          <th>Eye</th>
+          <td>{{ index_data.eye }}</td>
+        </tr>
+        <tr>
+          <th>Nose</th>
+          <td>{{ index_data.nose }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="column">
+      <h1>Value Details</h1>
+      <table>
+        <tr>
+          <th>Operation Name</th>
+          <td>{{ value_data.operation_name }}</td>
+        </tr>
+        <tr>
+          <th>Operation ID</th>
+          <td>{{ value_data.operation_id }}</td>
+        </tr>
+        <tr>
+          <th>Operation Grade</th>
+          <td>{{ value_data.operation_grade }}</td>
+        </tr>
+        <!-- Add more rows for additional value details -->
+      </table>
+      <p>Selected Operation ID: {{ operation_id }}</p>
+      <!-- Add more content as needed for value details -->
+    </div>
+  </body>
+</html>

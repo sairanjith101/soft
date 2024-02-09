@@ -1,0 +1,63 @@
+<!-- templates/database.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database Page</title>
+  </head>
+  <body>
+    <h1>Database Page</h1>
+
+    <table border="1">
+      <tr>
+        <th>Operation Name</th>
+        <th>Operation ID</th>
+        <th>Operation Grade</th>
+        <th>Neck</th>
+        <th>Leg</th>
+        <th>Arm</th>
+        <th>Eye</th>
+        <th>Nose</th>
+        <th>Actions</th>
+        <!-- Add headers for other attributes as needed -->
+      </tr>
+      {% for item in database_data %}
+      <tr>
+        <td>{{ item.operation_name }}</td>
+        <td>{{ item.operation_id }}</td>
+        <td>{{ item.operation_grade }}</td>
+        <td>{{ item.neck }}</td>
+        <td>{{ item.leg }}</td>
+        <td>{{ item.arm }}</td>
+        <td>{{ item.eye }}</td>
+        <td>{{ item.nose }}</td>
+        <!-- Add columns for other attributes as needed -->
+        <td>
+          <form
+            action="{{ url_for('operation_details', operation_id=item.operation_id) }}"
+            method="get"
+          >
+            <button type="submit">Details</button>
+          </form>
+          <form
+            action="{{ url_for('delete', operation_id=item.operation_id) }}"
+            method="post"
+          >
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <script>
+      // JavaScript function to handle selection from the database
+      function selectOperation(operationId) {
+        window.location.href =
+          "{{ url_for('index', selected_operation_id='') }}" + operationId;
+      }
+    </script>
+  </body>
+</html>
