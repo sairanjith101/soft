@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <link rel="stylesheet" href="/static/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/home.css" type="text/css" />
+    <style>
+      body {
+        padding-top: 70px;
+        background-color: rgb(154, 149, 224);
+      }
+
+      div.container {
+        border: 1px solid #fff;
+      }
+
+      .bg {
+        padding: 10px;
+        background-color: #563d7c26;
+        border: 1px solid rgba(86, 61, 124, 0.2);
+      }
+
+      .color-1 {
+        padding: 10px;
+        background-color: #d3bbff;
+        color: #000;
+      }
+
+      .grid-layouts.container {
+        border: 1px solid rgb(204, 23, 17) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container p50">
+      <h1>Welcome to the Bootstrap course</h1>
+      <p>Lets start learning bootstrap</p>
+    </div>
+
+    <div class="container color-1 height-500">
+      <h4>Bootstrap Grid</h4>
+      <p>Learnbasic layout</p>
+
+      <!-- Layout -->
+      <div class="grid-layouts container bg">
+        <!-- 12 column in grid -->
+        <!-- Row -->
+        <div class="row">
+          <div class="col-4 bg">.col-4</div>
+          <div class="col-4 bg">.col-4</div>
+          <div class="col-4 bg">.col-4</div>
+        </div>
+        <div class="row">
+          <div class="col bg">.col</div>
+          <div class="col bg">.col</div>
+          <div class="col bg">.col</div>
+          <div class="col bg">.col</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Layout -->
+    <script src="/static/assert/js/jquery.min.js"></script>
+    <script src="/static/assert/js/bootstrap.min.js"></script>
+  </body>
+</html>
