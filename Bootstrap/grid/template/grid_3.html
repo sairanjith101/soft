@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <link rel="stylesheet" href="/static/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/home.css" type="text/css" />
+    <style>
+      body {
+        padding-top: 70px;
+        background-color: rgb(154, 149, 224);
+      }
+
+      div.container {
+        border: 1px solid #fff;
+      }
+
+      .bg {
+        padding: 10px;
+        background-color: #563d7c26;
+        border: 1px solid rgba(86, 61, 124, 0.2);
+      }
+
+      .color-1 {
+        padding: 10px;
+        background-color: #d3bbff;
+        color: #000;
+      }
+
+      .grid-layouts.container {
+        border: 1px solid rgb(204, 23, 17) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container p50">
+        <h1>Welcome to the Bootstrap course</h1>
+        <p>Lets start learning bootstrap</p>
+    </div>
+
+    <div class="container color-1 height-500">
+        <h4>Bootstrap Grid</h4>
+        <p>Learnbasic layout</p>
+        
+        <!-- Layout -->
+        <div class="grid-layouts container text-center">
+            <div class="row">
+                <div class="col bg">[Logo]</div>
+                <div class="col bg">
+                <ol class="d-flex justify-content-between">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ol>
+            </div>
+            <div class="col bg">
+                <button>Login Now</button>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="row align-items-center" style="height: 200px"> <!--class="row align-items-center/end/start/stretch"  -->
+            <div class="col-2 bg">Left Sidebar</div>
+            <div class="col bg">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+            cumque voluptatibus mollitia, nemo aliquam asperiores. Amet sit
+            consequatur, nam perferendis suscipit quod voluptatum tempora
+            repudiandae deserunt atque numquam omnis soluta iure? Necessitatibus
+            quibusdam numquam aperiam iure omnis neque beatae, laborum, natus
+            error ipsam blanditiis doloribus saepe, officia nesciunt esse
+            laudantium.
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="row">
+        <div class="col bg">Footer Information</div>
+    </div>
+    <hr>
+    <!-- End Point -->
+    <div class="row justify-content-between"> <!--<div class="row justify-content-between/center,start/end/around">-->
+      <div class="col-3 bg">
+        .col-3
+      </div>
+      <div class="col-3 bg">
+      .col-4
+      </div>
+      <div class="col-3 bg">
+        .col-5
+      </div>
+    </div>
+</div>
+
+    <!-- End Layout -->
+    <script src="/static/assert/js/jquery.min.js"></script>
+    <script src="/static/assert/js/bootstrap.min.js"></script>
+  </body>
+</html>
