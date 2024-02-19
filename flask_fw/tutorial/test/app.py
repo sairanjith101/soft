@@ -1,23 +1,34 @@
-from flask import Flask, render_template,request,make_response
+from flask import Flask, redirect, url_for, session,request
 
-app = Flask(__name__, template_folder='template')
+app = Flask(__name__)
+app.secret_key = 'any random string'
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    if 'username' in session:
+        username = session['username']
+        return 'Logged in as ' + username + '<br>' + \
+        "<b><a href='/logout'>click here to log out</a></b>"
+    return "You are not logged in <br><a href = '/login'></b>" + \
+    "click her to login </b><a/>"
 
-@app.route('/setcookie', methods=['POST', 'GET'])
-def setcookie():
+@app.route('/login', methods=['POST', 'GET'])
+def login():
     if request.method == 'POST':
-        user = request.form['nm']
-        resp = make_response(render_template('setcookie.html'))
-        resp.set_cookie('UserID', user)
-        return resp
-    
-@app.route('/getcookie')
-def getcookie():
-    name = request.cookies.get('UserID')
-    return '<h1> Welcome ' + name + '</h1>'
+        session['username'] = request.form['username']
+        return redirect(url_for('index'))
+    return '''
+    <form action = "" method = "POST">
+    <p><input type = text name = username /></p>
+    <p><input type = submit value = Login /></p>
+    </form>
+    '''
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
