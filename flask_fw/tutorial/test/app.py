@@ -1,20 +1,23 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask, render_template,request,make_response
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template')
 
-@app.route('/success/<name>')
-def success(name):
-    return "Welcome " + name
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
+@app.route('/setcookie', methods=['POST', 'GET'])
+def setcookie():
     if request.method == 'POST':
         user = request.form['nm']
-        return redirect(url_for('success', name=user))
-    else:
-        user = request.args.get('success', name = user)
-
-
+        resp = make_response(render_template('setcookie.html'))
+        resp.set_cookie('UserID', user)
+        return resp
+    
+@app.route('/getcookie')
+def getcookie():
+    name = request.cookies.get('UserID')
+    return '<h1> Welcome ' + name + '</h1>'
 
 if __name__ == '__main__':
     app.run(debug=True)
