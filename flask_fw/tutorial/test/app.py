@@ -1,34 +1,16 @@
-from flask import Flask, redirect, url_for, session,request
+from flask import Flask, render_template,request
 
-app = Flask(__name__)
-app.secret_key = 'any random string'
+app = Flask(__name__, template_folder='template')
 
 @app.route('/')
 def index():
-    if 'username' in session:
-        username = session['username']
-        return 'Logged in as ' + username + '<br>' + \
-        "<b><a href='/logout'>click here to log out</a></b>"
-    return "You are not logged in <br><a href = '/login'></b>" + \
-    "click her to login </b><a/>"
+    return render_template('index.html')
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
+@app.route('/result', methods = ['GET', 'POST'])
+def result():
     if request.method == 'POST':
-        session['username'] = request.form['username']
-        return redirect(url_for('index'))
-    return '''
-    <form action = "" method = "POST">
-    <p><input type = text name = username /></p>
-    <p><input type = submit value = Login /></p>
-    </form>
-    '''
-
-@app.route('/logout')
-def logout():
-    session.pop('username', None)
-    return redirect(url_for('index'))
-
-
+        mark = request.form
+        return render_template('result.html', mark = mark)
+    
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug = True)

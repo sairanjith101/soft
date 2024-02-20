@@ -1,18 +1,7 @@
 import numpy as np
 
-num = np.array([
-    [
-        [
-            [1,2,3],
-            [1,2,3]
-        ]
-    ],
-    [
-        [
-            [1,2,3],
-            [4,5,6]
-        ]
-    ]
-])
+arr = np.array([[1, 2, 3],[4, 5, 6]])
 
-print(num.ndim)
+print(arr)
+print("Last element is 2nd row: ", arr[1,-1])
+

@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In</title>
+    <title>Flask</title>
   </head>
   <body>
-    <p>Enter Name:</p>
-    <p><input type="text" name="nm" /></p>
-    <p><input type="submit" value="submit" /></p>
+    <form action="http://localhost:5000/signin" method="post">
+      <h1>Enter a Name:</h1>
+      <p><input type="text" name="nm" /></p>
+      <p><input type="submit" value="submit" /></p>
+    </form>
   </body>
 </html>
