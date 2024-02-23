@@ -1,0 +1,27 @@
+<!-- flash(message, category) -->
+<!-- message parameter is the actual message to be flashed.  -->
+<!-- category parameter is optional. It can be either ‘error’, ‘info’ or ‘warning’. -->
+<!-- get_flashed_messages(with_categories, category_filter) -->
+<!-- Both parameters are optional. The first parameter is a tuple if received messages are having category. -->
+<!-- The second parameter is useful to display only specific messages. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask Message flashing</title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+    <h1>Flask Message Flashing Example</h1>
+    <p>
+      Do you want to <a href="{{ url_for('login') }}"> <b>log in?</b></a>
+    </p>
+  </body>
+</html>
