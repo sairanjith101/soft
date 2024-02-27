@@ -1,12 +1,20 @@
-
 import pymongo
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["Sai"]
-mycol = mydb["customers"]
 
-# for x in mycol.find({},{ "name": 1, "address": 0 }):
-#   print(x)
+mydb = myclient["Ran"]
 
-for x in mycol.find({},{ "name": 1 }):
-    print(x)
+mycol = mydb["check"]
+
+# Inserting some data into the "check" collection
+mycol.insert_one({"example": "data"})
+
+print(myclient.list_database_names())
+
+dblist = myclient.list_database_names()
+
+if 'Ran' in dblist:
+    print("The database is exists")
+else:
+    print("the database is not exists")
+

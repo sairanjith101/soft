@@ -10,6 +10,9 @@ mydb = myclint['Sai']
 
 mycol = mydb["customers"]
 
+# Inserting some data into the "check" collection
+mycol.insert_one({"example": "data"})
+
 print(myclint.list_database_names())
 
 dblist = myclint.list_database_names()
