@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Application</title>
+    <link rel="stylesheet" href="/static/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/home.css" type="text/css" />
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename = 'icon.png')}}"
+    />
+  </head>
+  <body>
+    {% block body %}
+    <div class="container mt-5 mb-5">
+      <div class="text-center">
+        <h1>Python Flask CRUD Web Application Development</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2>
+            Student List
+            <button
+              type="button"
+              class="btn btn-success float-end"
+              data-bs-toggle="modal"
+              data-bs-target="#mymodal"
+            >
+              Add Student Data
+            </button>
+          </h2>
+          <table class="table table-striped">
+            <tr>
+              <th>Serial</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Action</th>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>Arun</td>
+              <td>arun@gmail.com</td>
+              <td>1234567892</td>
+              <td>
+                <a
+                  href=""
+                  class="btn btn-warning btn-xs"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modaledit"
+                  >Edit</a
+                >
+                <a
+                  href=""
+                  class="btn btn-danger btn-xs"
+                  onclick="return confirm('Are You Sure To Delete?')"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    <footer>
+      <div class="well">
+        <h4>
+          Website:<a href="">www.sairanjith@yahoo.com</a>
+          <span class="float-end">Like Us:<a href="">www.Facebook.com</a></span>
+        </h4>
+      </div>
+    </footer>
+
+    <!-- End Layout -->
+    <script src="/static/assert/js/jquery.min.js"></script>
+    <script src="/static/assert/js/bootstrap.min.js"></script>
+  </body>
+</html>
