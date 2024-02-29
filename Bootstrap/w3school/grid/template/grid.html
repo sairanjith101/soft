@@ -1,0 +1,32 @@
+<!-- Bootstrap 5 Grid System -->
+<!-- Bootstrap's grid system is built with flexbox and allows up to 12 columns across the page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <link rel="stylesheet" href="/grid/static/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/home.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container mt-3 px-4">
+      <h1>Three equal width columns</h1>
+      <p>
+        Note: Try to add a new div with class="col" inside the row class - this
+        will create four equal-width columns.
+      </p>
+      <div class="row">
+        <div class="col-3 p-3 bg-primary text-white">.col</div>
+        <div class="col-3 p-3 bg-dark text-white">.col</div>
+        <div class="col-3 p-3 bg-primary text-white">.col</div>
+        <div class="col-3 p-3 bg-dark text-white">.col</div>
+      </div>
+    </div>
+
+    <!-- End Layout -->
+    <script src="/grid/static/assert/js/jquery.min.js"></script>
+    <script src="/grid/static/assert/js/bootstrap.min.js"></script>
+  </body>
+</html>
