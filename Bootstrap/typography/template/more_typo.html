@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typography</title>
+    <link rel="stylesheet" href="/static/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/home.css" type="text/css" />
+  </head>
+  <body>
+    <!-- lead -->
+    <div class="container mt-3 border">
+      <h2>Typography</h2>
+      <p>Use the .lead class to make a paragraph "stand out":</p>
+      <p class="lead">This paragraph stands out.</p>
+      <p>This is a regular paragraph.</p>
+    </div>
+    <!-- Text start/end/center/nowrap -->
+    <div class="container mt-3 border">
+      <h2>Typography</h2>
+      <p class="text-start">Left-aligned text.</p>
+      <p class="text-end">Right-aligned text.</p>
+      <p class="text-center">Center-aligned text.</p>
+      <p class="text-nowrap">
+        No wrap text. No wrap text. No wrap text. No wrap text.
+      </p>
+    </div>
+    <!-- text break -->
+    <div class="container mt-3 border">
+      <h2>Text break / Word break</h2>
+      <p>The .text-break class prevents long text from breaking layout.</p>
+      <p>With .text-break:</p>
+      <p class="text-break">
+        AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz
+      </p>
+      <p>Without .text-break:</p>
+      <p>
+        AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz
+      </p>
+    </div>
+    <!-- Decoration -->
+    <div class="container mt-3 border">
+      <h2>Text Decoration</h2>
+      <p>
+        Use the .text-decoration-none class to remove the underline from a link.
+      </p>
+      <a href="#" class="text-decoration-none">A link without underline.</a>
+    </div>
+    <!-- lower/upper/Captalized text -->
+    <div class="container mt-3 border">
+      <h2>Typography</h2>
+      <p class="text-lowercase">Lowercased text.</p>
+      <p class="text-uppercase">Uppercased text.</p>
+      <p class="text-capitalize">Capitalized text.</p>
+    </div>
+    <!-- <abbr> slightly smaller font size -->
+    <div class="container mt-3 border">
+      <h2>Typography</h2>
+      <p>
+        The <abbr title="World Health Organization">WHO</abbr> was founded in
+        1948. (normal abbr)
+      </p>
+      <p>
+        The
+        <abbr title="World Health Organization" class="initialism">WHO</abbr>
+        was founded in 1948. (slightly smaller abbr)
+      </p>
+    </div>
+    <!-- Removes the default list-style and left margin on list items (works on both <ul> and <ol>). This class only applies to immediate children list items (to remove the default list-style from any nested lists, apply this class to any nested lists as well) -->
+    <div class="container mt-3 border">
+      <h2>Typography</h2>
+      <p>
+        The class .list-unstyled removes the default list-style and left margin
+        on list items (immediate children only):
+      </p>
+      <ul class="list-unstyled">
+        <li>Coffee</li>
+        <li>
+          Tea
+          <ul>
+            <li>Black tea</li>
+            <li>Green tea</li>
+          </ul>
+        </li>
+        <li>Milk</li>
+      </ul>
+    </div>
+
+    <!-- Places all list items on a single line (used together with .list-inline-item on each <li> elements) -->
+    <div class="container mt-3 border">
+      <h2>Typography</h2>
+      <p>
+        The class .list-inline places all list items on a single line, when used
+        together with the .list-inline-item:
+      </p>
+      <ul class="list-inline">
+        <li class="list-inline-item">Coffee</li>
+        <li class="list-inline-item">Tea</li>
+        <li class="list-inline-item">Milk</li>
+      </ul>
+    </div>
+    <!-- End Layout -->
+    <script src="/static/assert/js/jquery.min.js"></script>
+    <script src="/static/assert/js/bootstrap.min.js"></script>
+  </body>
+</html>
