@@ -32,6 +32,7 @@ arr = np.array([[[1,2,3],[5,6,7]],[[8,9,10],[11,12,13]]])
 
 # Access the third element of the second array of the first array:
 print(arr[0,1,2])
+print(arr[0][1][2])
 
 # `~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -1,10 +1,8 @@
+# Flattening the arrays
 import numpy as np
 
-arr = np.array([1,2,3,4,5])
-x = arr.copy()
-y = arr.view()
-arr[0] = 43
+arr = np.array([[1, 2, 3], [4, 5, 6]])
 
-print(arr)
-print(x)
-print(y)
+newarr = arr.reshape(-100)
+
+print(newarr)
