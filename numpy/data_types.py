@@ -25,43 +25,27 @@
 import numpy as np
 
 arr = np.array([1,2,3,4,5])
-
 print(arr.dtype)
-
 print('~' * 120)
 
 ################################################################################3
 
-import numpy as np
-
 arr = np.array(['hai', 'bye', 'tata'])
-
 print(arr.dtype)
-
 print('~' * 120)
 
 ################################################################################
-
-import numpy as np
 
 arr = np.array([1,2,3,4,5], dtype='S')
-
 print(arr)
-
 print(arr.dtype)
-
 print('~' * 120)
 
 ################################################################################
 
-import numpy as np
-
 arr = np.array([1,2,3,4,5], dtype='i4')
-
 print(arr)
-
 print(arr.dtype)
-
 print('~' * 120)
 
 ################################################################################
@@ -79,26 +63,15 @@ print('~' * 120)
 ################################################################################
 
 # Converting Data Type on Existing Arrays
-
-import numpy as np
-
 arr = np.array([1.1, 2.1, 3.1])
-
 newarr = arr.astype('i')
-
 print(newarr)
 print(newarr.dtype)
-
 print('~' * 120)
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-import numpy as np
-
 arr = np.array([1, 0, 3])
-
 newarr = arr.astype(bool)
-
 print(newarr)
 print(newarr.dtype)
 

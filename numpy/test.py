@@ -1,8 +1,7 @@
-# Flattening the arrays
 import numpy as np
 
-arr = np.array([[1, 2, 3], [4, 5, 6]])
+arr1 = np.array([[1,2],[7,8]])
+arr2 = np.array([[4,5], [11,12]])
 
-newarr = arr.reshape(-100)
-
-print(newarr)
+arr = np.concatenate((arr1,arr2), axis=1)
+print(arr)
