@@ -22,4 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('check/', views.retrive),
     path('create/', views.create_view),
+    path('delete/<id>', views.delete_view),
+    path('update/<id>', views.update_view),
 ]
