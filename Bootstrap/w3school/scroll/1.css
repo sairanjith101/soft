@@ -1,0 +1,18 @@
+.scroll-container {
+    width: 300px; /* Set the width of the container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
+  }
+  
+  .content {
+    width: 600px; /* Set the width of the content inside the container */
+  }
+  
+  .item {
+    display: inline-block; /* Display items in a row */
+    width: 100px; /* Set the width of each item */
+    height: 100px; /* Set the height of each item */
+    background-color: #f1f1f1;
+    margin-right: 10px; /* Add some space between items */
+  }
+  

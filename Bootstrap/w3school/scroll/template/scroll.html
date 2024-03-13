@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typography</title>
+    <link rel="stylesheet" href="/scroll/static/assert/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/scroll/static/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <table class="my-table" border="1"></table>
+      </div>
+    </div>
+    <button id="scrollRight">Scroll Right</button>
+    <div class="container-fluid">
+      <div class="row">
+        <table class="my-table" border="1">
+          <thead>
+            <th>SNo</th>
+            <th>Name</th>
+            <th style="width: 150px">Class</th>
+            <th>Dept</th>
+            <th>Location</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+          </thead>
+          <tr>
+            <td>1</td>
+            <td>Ranjith</td>
+            <td>10</td>
+            <td>IT</td>
+            <td>Chennai</td>
+            <td>Adambakkam</td>
+            <td>Tamilnadu</td>
+            <td>India</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script>
+      const scrollButton = document.getElementById("scrollRight");
+      const tableElement = document.querySelector(".my-table");
+
+      scrollButton.addEventListener("click", () => {
+        tableElement.scrollLeft += 100; // Adjust scroll amount as needed
+      });
+    </script>
+    <!-- End Layout -->
+    <script src="/scroll/static/assert/js/jquery.min.js"></script>
+    <script src="/scroll/static/assert/js/bootstrap.min.js"></script>
+  </body>
+</html>
